@@ -1,0 +1,416 @@
+/* =========================
+   Root Variables
+========================= */
+:root {
+  --primary: #667eea;
+  --secondary: #764ba2;
+  --bg-light: #f7fafc;
+  --text-dark: #1a202c;
+  --text-muted: #718096;
+  --success-bg: #ecfdf5;
+  --success-text: #065f46;
+  --warning-bg: #fffbeb;
+  --warning-text: #92400e;
+  --danger-bg: #fef2f2;
+  --danger-text: #991b1b;
+}
+
+/* =========================
+   Layout & Background
+========================= */
+.escrow-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================
+   Card
+========================= */
+.escrow-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem;
+  max-width: 600px;
+  width: 100%;
+  animation: floatIn 0.6s ease;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
+   Header
+========================= */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.wallet-icon {
+  font-size: 2rem;
+}
+
+/* =========================
+   Wallet Section
+========================= */
+.wallet-section {
+  background: var(--bg-light);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+
+/* =========================
+   Buttons
+========================= */
+button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.primary-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Connected Wallet Info
+========================= */
+.connected-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.connected-info .label {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.connected-info .address {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #2d3748;
+  word-break: break-all;
+}
+
+/* =========================
+   Premium Inputs
+========================= */
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 0.4rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.95rem;
+  background: #ffffff;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+
+/* =========================
+   Status Badge
+========================= */
+
+.status {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.status.locked {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.status.pending {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.status.released {
+  background: #eef2ff;
+  color: #3730a3;
+}
+
+.status.error {
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+
+/* =========================
+   Loading Spinner
+========================= */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================
+   Progress Steps
+========================= */
+.steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  position: relative;
+}
+
+.step.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.step::after {
+  content: '';
+  height: 2px;
+  background: #e2e8f0;
+  position: absolute;
+  top: 8px;
+  right: -50%;
+  width: 100%;
+  z-index: -1;
+}
+
+.step:last-child::after {
+  display: none;
+}
+
+.step.active::after {
+  background: var(--primary);
+}
+
+/* =========================
+   Toast Notifications
+========================= */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.4s ease;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.toast.success {
+  border-left: 4px solid #10b981;
+}
+
+.toast.error {
+  border-left: 4px solid #ef4444;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* =========================
+   Instruction Box
+========================= */
+
+.instructions {
+  margin-top: 2rem;
+  background: #f7fafc;
+  padding: 1.2rem 1.4rem;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  color: #4a5568;
+  line-height: 1.6;
+}
+
+.instructions h3 {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.instructions ol {
+  padding-left: 1.2rem;
+}
+
+.instructions li {
+  margin-bottom: 0.4rem;
+}
+/* =========================
+   Instruction Steps with Checkmarks
+========================= */
+
+.steps-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.75rem;
+}
+
+.steps-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  color: #4a5568;
+}
+
+.steps-list li::before {
+  content: '⬜';
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.steps-list li.done {
+  color: #065f46;
+  font-weight: 500;
+}
+
+.steps-list li.done::before {
+  content: '✅';
+}
+
+/* =========================
+   Balance Display
+========================= */
+.balance-display {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.balance-display .label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.balance-display .balance {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.network-badge {
+  display: inline-block;
+  background: #10b981;
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+/* =========================
+   Dark Mode (Optional)
+========================= */
+.dark .escrow-card {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+.dark .wallet-section,
+.dark .instructions {
+  background: #111827;
+}
+
+.dark input {
+  background: #111827;
+  color: white;
+  border-color: #374151;
+}

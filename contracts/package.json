@@ -1,0 +1,19 @@
+{
+  "name": "trustpay-contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts for TrustPay freelance escrow",
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy:local": "hardhat run scripts/deploy.js --network hardhat",
+    "deploy:base": "hardhat run scripts/deploy.js --network base",
+    "deploy:baseSepolia": "hardhat run scripts/deploy.js --network baseSepolia",
+    "deploy:mockToken": "hardhat run scripts/deploy-mock-token.js --network base",
+    "deploy:mockTokenSepolia": "hardhat run scripts/deploy-mock-token.js --network baseSepolia",
+    "test": "hardhat test"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "dotenv": "^16.6.1",
+    "hardhat": "^2.19.4"
+  }
+}
