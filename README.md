@@ -170,14 +170,6 @@ Open `http://localhost:3000` and connect your wallet!
 
 ---
 
-## 👥 Credits
-
-Built for [Hackathon Name]  
-Track: Financial Automation  
-Technology: MNEE Stablecoin on Base
-
----
-
-## 📄 License
+##  License
 
 MIT
